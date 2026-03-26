@@ -5,7 +5,7 @@
 Initialize Python env from lock-style dependency list:
 
 ```bash
-cd /Users/leef/ai/images/codex
+cd <repo-dir>
 ./scripts/bootstrap_env.sh
 ```
 
@@ -31,7 +31,7 @@ Files:
 ## Run
 
 ```bash
-cd /Users/leef/ai/images/codex
+cd <repo-dir>
 ./run.sh web 8788
 ```
 
