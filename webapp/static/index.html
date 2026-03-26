@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Watermark Remover</title>
+    <link rel="stylesheet" href="/static/styles.css" />
+  </head>
+  <body>
+    <main class="page">
+      <h1>Local Watermark Remover</h1>
+      <p class="sub">Upload image -> auto detect mask -> optional manual mark -> remove watermark.</p>
+
+      <section class="panel controls">
+        <input id="fileInput" type="file" accept="image/*" />
+        <button id="uploadBtn">Upload</button>
+        <button id="autoMaskBtn" disabled>Auto Detect Mask</button>
+        <button id="clearRectsBtn" disabled>Clear Manual Rects</button>
+        <button id="uploadManualMaskBtn" disabled>Upload Manual Mask</button>
+        <button id="runAutoBtn" disabled>Remove (Auto Mask)</button>
+        <button id="runManualBtn" disabled>Remove (Manual Mask)</button>
+      </section>
+
+      <section class="panel status">
+        <div><strong>Job ID:</strong> <span id="jobId">-</span></div>
+        <div><strong>Status:</strong> <span id="jobStatus">idle</span></div>
+        <div><strong>Message:</strong> <span id="jobMessage">-</span></div>
+        <div><strong>Error:</strong> <span id="jobError">-</span></div>
+      </section>
+
+      <section class="grid">
+        <div class="panel">
+          <h2>Input + Manual Mark</h2>
+          <div id="canvasWrap" class="canvas-wrap">
+            <img id="inputImage" alt="input" />
+            <canvas id="markCanvas"></canvas>
+          </div>
+          <p class="hint">Drag on image to draw rectangle mask area.</p>
+        </div>
+
+        <div class="panel">
+          <h2>Auto Mask</h2>
+          <img id="autoMaskImage" alt="auto mask" class="preview" />
+        </div>
+
+        <div class="panel">
+          <h2>Output</h2>
+          <img id="outputImage" alt="output" class="preview" />
+          <a id="downloadLink" href="#" download="output.png" class="hidden">Download Output</a>
+        </div>
+      </section>
+    </main>
+    <script src="/static/app.js"></script>
+  </body>
+  </html>
+

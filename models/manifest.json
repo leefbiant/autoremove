@@ -1,0 +1,14 @@
+{
+  "description": "Required inpainting models for local watermark removal.",
+  "models": [
+    {
+      "id": "runwayml/stable-diffusion-inpainting",
+      "type": "diffusers"
+    },
+    {
+      "id": "sd2-community/stable-diffusion-2-inpainting",
+      "type": "diffusers",
+      "optional": true
+    }
+  ]
+}
